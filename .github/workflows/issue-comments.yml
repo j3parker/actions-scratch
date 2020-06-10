@@ -1,0 +1,7 @@
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    run: cat "$GITHUB_EVENT_PATH"
