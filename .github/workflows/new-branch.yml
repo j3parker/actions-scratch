@@ -5,4 +5,4 @@ jobs:
     if: ${{ github.event.push.before == '0000000000000000000000000000000000000000' }}
     steps:
       - run: echo woohoo
-      - run: cat "${GITHUB_EVENT}"
+      - run: cat "${GITHUB_EVENT_PATH}"
