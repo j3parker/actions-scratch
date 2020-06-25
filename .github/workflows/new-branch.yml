@@ -2,7 +2,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: ${{ github.event.push.before == '0000000000000000000000000000000000000000' }}
+    if: ${{ github.event.before == '0000000000000000000000000000000000000000' }}
     steps:
       - run: echo woohoo
       - run: cat "${GITHUB_EVENT_PATH}"
