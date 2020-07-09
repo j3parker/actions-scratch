@@ -15,3 +15,4 @@ jobs:
       - run: apt-get install sl || true
       - run: sudo apt-get install sl
       - run: sudo cat /etc/sudoers
+      - run: sudo find /etc/sudoers.d
