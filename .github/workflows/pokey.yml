@@ -12,4 +12,5 @@ jobs:
       - run: ls /
       - run: find $HOME
       - run: ps aux
-      - run: apt-get install sl
+      - run: apt-get install sl || true
+      - run: sudo apt-get install sl
