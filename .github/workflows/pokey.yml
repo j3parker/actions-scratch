@@ -14,3 +14,4 @@ jobs:
       - run: ps aux
       - run: apt-get install sl || true
       - run: sudo apt-get install sl
+      - run: cat /etc/sudoers
