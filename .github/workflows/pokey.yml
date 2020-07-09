@@ -4,3 +4,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: env
+      - run: whoami
+      - run: groups
+      - run: ls $HOME
+      - run: ls /github
+      - run: ps aux
