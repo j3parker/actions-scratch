@@ -17,7 +17,7 @@ jobs:
               {q: "repo:j3parker/actions-scratch label:wait-for-next-release is:open"}
             );
             
-            for(const thing of things) {
+            for await(const thing of things) {
               github.issues.removeLabel({
                 owner: 'j3parker',
                 repo: 'actions-scratch',
