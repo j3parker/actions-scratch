@@ -12,7 +12,7 @@ jobs:
         uses: actions/github-script@master
         with:
           script: |
-            const things = github.paginate.iterator(
+            const things = github.paginate.iterator(k
               github.search.issuesAndPullRequests,
               {q: "repo:j3parker/actions-scratch label:wait-for-next-release is:open"}
             );
