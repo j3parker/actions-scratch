@@ -4,7 +4,7 @@ on:
     branches:
       - "release/*"
 jobs:
-  test:
+  test: 
     runs-on: ubuntu-latest
     if: ${{ github.event.before == '0000000000000000000000000000000000000000' }}
     steps:
