@@ -18,6 +18,7 @@ jobs:
             );
             
             for await(const thing of things) {
+              console.log(JSON.stringify(thing));
               github.issues.removeLabel({
                 owner: 'j3parker',
                 repo: 'actions-scratch',
