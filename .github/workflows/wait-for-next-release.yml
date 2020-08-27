@@ -1,0 +1,28 @@
+name: New Release Branch
+on:
+  push:
+    branches:
+      - "release/*"
+jobs:
+  test:
+    runs-on: [self-hosted, Linux]
+    if: ${{ github.event.before == '0000000000000000000000000000000000000000' }}
+    steps:
+      - name: Remove wait-for-next-release labels
+        uses: actions/github-script@master
+        with:
+          script: |
+            const things = octokit.paginate.iterator(
+              octokit.search.issuesAndPullRequests,
+              {q: "repo:j3parker/actions-scratch label:wait-for-next-release is:open"}
+            );
+            
+            for(const thing of things) {
+              octokit.issues.removeLabel({
+                owner: 'j3parker',
+                repo: 'actions-scratch',
+                issue_number: thing.id,
+                name: 'wait-for-next-release',
+              });
+            }
+           
