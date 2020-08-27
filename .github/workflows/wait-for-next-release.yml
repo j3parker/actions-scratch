@@ -12,13 +12,13 @@ jobs:
         uses: actions/github-script@master
         with:
           script: |
-            const things = octokit.paginate.iterator(
-              octokit.search.issuesAndPullRequests,
+            const things = github.paginate.iterator(
+              github.search.issuesAndPullRequests,
               {q: "repo:j3parker/actions-scratch label:wait-for-next-release is:open"}
             );
             
             for(const thing of things) {
-              octokit.issues.removeLabel({
+              github.issues.removeLabel({
                 owner: 'j3parker',
                 repo: 'actions-scratch',
                 issue_number: thing.id,
