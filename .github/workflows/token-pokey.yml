@@ -7,4 +7,4 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           previews: "application/vnd.github.v3+json"
-          script: console.log(JSON.stringify(await github.request("GET /app")))
+          script: console.log(JSON.stringify(await github.repos.get({owner:"j3parker",repo:"actions-scratch"})))
