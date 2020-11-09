@@ -1,6 +1,7 @@
 on: push
 jobs:
   job:
+    runs-on: linux
     steps:
       - uses: actions/github-script@v3
         with:
