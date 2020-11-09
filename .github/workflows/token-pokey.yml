@@ -6,4 +6,5 @@ jobs:
       - uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-          script: console.log(JSON.stringify(await github.request("GET /user", {headers:{accept:"application/vnd.github.v3+json"}})))
+          previews: "application/vnd.github.v3+json"
+          script: console.log(JSON.stringify(await github.request("GET /user")))
