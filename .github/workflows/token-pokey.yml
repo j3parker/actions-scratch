@@ -6,4 +6,4 @@ jobs:
       - uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
-          script: console.log(JSON.stringify(github.apps.getAuthenticated()))
+          script: console.log(JSON.stringify(await github.request("GET /")))
