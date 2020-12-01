@@ -7,7 +7,7 @@ jobs:
     container: docker
     steps:
       - run: ls /var/run
-      - run: modprobe -l
+      - run: lsmod || true
       - run: docker ps
       - name: container escape
-        run: docker run --privileged ubuntu sh -c 'modprobe -l'
+        run: docker run --privileged ubuntu sh -c 'lsmod'
