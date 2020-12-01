@@ -7,7 +7,7 @@ jobs:
     container: docker
     steps:
       - run: ls /var/run
-      - run: lsmod || true
+      - run: modprobe -r joypad || true
       - run: docker ps
       - name: container escape
-        run: docker run --privileged ubuntu sh -c 'lsmod'
+        run: docker run --privileged ubuntu sh -c 'modprobe -r joypad'
