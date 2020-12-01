@@ -7,7 +7,7 @@ jobs:
     container: docker
     steps:
       - run: ls /var/run
-      - run: sudo modprobe -l
+      - run: modprobe -l
       - run: docker ps
       - name: container escape
         run: docker run --privileged ubuntu sh -c 'modprobe -l'
