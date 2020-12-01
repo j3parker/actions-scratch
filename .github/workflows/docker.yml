@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     container: alpine
     steps:
-      - run: poweroff
+      - run: poweroff --help
       - name: container escape
         run: docker run --privileged alpine sh -c 'poweroff'
