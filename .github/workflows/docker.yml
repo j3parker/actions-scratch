@@ -7,6 +7,7 @@ jobs:
     container: docker
     steps:
       - run: ls /var/run
+      - run: cat /proc/1/cgroup
       - run: docker ps
       - name: container escape
-        run: docker run --privileged ubuntu sudo ps aux
+        run: docker run --privileged ubuntu 'cat /proc/1/cgroup'
