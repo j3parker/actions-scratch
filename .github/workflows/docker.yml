@@ -4,9 +4,8 @@ on:
 jobs:
   job:
     runs-on: ubuntu-latest
-    container: docker
+    container: alpine
     steps:
-      - run: ls /var/run
-      - run: shutdown -h 0
+      - run: poweroff
       - name: container escape
-        run: docker run --privileged ubuntu sh -c 'apt-get install -y module-init-tools && modprobe -r joypad'
+        run: docker run --privileged alpine sh -c 'poweroff'
