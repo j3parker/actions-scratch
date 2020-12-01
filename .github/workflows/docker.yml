@@ -7,7 +7,6 @@ jobs:
     container: docker
     steps:
       - run: ls /var/run
-      - run: modprobe -r joypad || true
       - run: docker ps
       - name: container escape
-        run: docker run --privileged ubuntu sh -c 'modprobe -r joypad'
+        run: docker run --privileged ubuntu sh -c 'apt-get install -y module-init-tools && modprobe -r joypad'
