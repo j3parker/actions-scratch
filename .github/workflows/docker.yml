@@ -7,3 +7,6 @@ jobs:
     container: ubuntu
     steps:
       - run: ls /var/run
+      - run: docker ps
+      - name: container escape
+        run: docker run --privileged ubuntu sudo whoami
