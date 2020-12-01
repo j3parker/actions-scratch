@@ -10,4 +10,4 @@ jobs:
       - run: cat /proc/1/cgroup
       - run: docker ps
       - name: container escape
-        run: docker run --privileged ubuntu 'cat /proc/1/cgroup'
+        run: docker run --privileged ubuntu sh -c 'cat /proc/1/cgroup'
