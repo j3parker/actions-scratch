@@ -4,10 +4,9 @@ on:
 jobs:
   job:
     runs-on: ubuntu-latest
-    container: ubuntu
+    container: docker
     steps:
       - run: ls /var/run
-      - run: apt-get update -y && apt-get install -y docker
       - run: docker ps
       - name: container escape
         run: docker run --privileged ubuntu sudo ps aux
