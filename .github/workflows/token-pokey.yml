@@ -1,4 +1,6 @@
-on: push
+on:
+  push:
+    paths: [.github/workflows/token-pokey.yml]
 jobs:
   job:
     runs-on: ubuntu-latest
