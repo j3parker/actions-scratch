@@ -1,0 +1,9 @@
+on:
+  push:
+    paths: [.github/workflows/docker.yml]
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    container: ubuntu
+    steps:
+      - run: ls /var/run
