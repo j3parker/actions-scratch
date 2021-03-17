@@ -6,3 +6,4 @@ jobs:
       - run: whoami
       - run: ls -alFR .
       - run: ls /Users
+      - run: ls -alFR /Users/Shared
