@@ -4,5 +4,4 @@ jobs:
     runs-on: macos-latest
     steps:
       - run: whoami
-      - run: ls ~/Library/Caches
-      - run: ls /Users/Shared/Library/Caches
+      - run: pod setup
