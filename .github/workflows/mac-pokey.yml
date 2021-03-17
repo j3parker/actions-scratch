@@ -5,3 +5,4 @@ jobs:
     steps:
       - run: whoami
       - run: ls ~/Library/Caches
+      - run: ls /Users/Shared/Library/Caches
