@@ -4,7 +4,4 @@ jobs:
     runs-on: macos-latest
     steps:
       - run: whoami
-      - run: ls -alFR .
-      - run: ls /Users
-      - run: ls /Users/Shared
-      - run: ~/Library/Caches
+      - run: ls ~/Library/Caches
