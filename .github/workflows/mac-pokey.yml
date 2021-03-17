@@ -1,0 +1,8 @@
+on: push
+jobs:
+  eh:
+    runs-on: macos-latest
+    steps:
+      - run: whoami
+      - run: ls -alFR .
+      - run: ls /Users
