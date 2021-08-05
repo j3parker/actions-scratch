@@ -19,6 +19,7 @@ jobs:
       
   b:
     runs-on: ubuntu-latest
+    environment: ${{ github.event_name }}
     strategy:
       matrix:
         flavour: [x, y]
