@@ -7,9 +7,11 @@ jobs:
         flavour: [x, y]
     name: "a-${{matrix.flavour}}"
     steps:
-      - run: echo hello
-    outputs:
-      flavour: ${{ matrix.flavour }} 
+      - run: |
+          echo calculating something...
+          RESULT=$RANDOM
+          echo got $RESULT
+          echo "::set-output name=foo_${{ matrix.flavour }}::$RESULT"
   b:
     runs-on: ubuntu-latest
     strategy:
@@ -18,4 +20,4 @@ jobs:
     name: "b-${{matrix.flavour}}"
     needs: a
     steps:
-      - run: echo '${{ toJSON(needs) }}'
+      - run: echo '${{ needs.one.outputs.foo_${{ matrix.flavour }} }}'
