@@ -1,0 +1,9 @@
+on: push
+jobs:
+  a:
+    strategy:
+      matrix:
+        flavour: [x, y]
+     name: "a-${{matrix.flavour}}"
+     steps:
+       - run: echo hello
