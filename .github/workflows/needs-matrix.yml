@@ -1,9 +1,10 @@
 on: push
 jobs:
   a:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         flavour: [x, y]
-     name: "a-${{matrix.flavour}}"
-     steps:
-       - run: echo hello
+    name: "a-${{matrix.flavour}}"
+    steps:
+      - run: echo hello
