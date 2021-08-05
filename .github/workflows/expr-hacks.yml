@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ (github.event_name == "push" && "foo") || "bar" }}
     steps:
-      -run: echo oh dear
+      - run: echo oh dear
