@@ -15,3 +15,5 @@ jobs:
         flavour: [x, y]
     name: "a-${{matrix.flavour}}"
     needs: a
+    steps:
+      - run: echo goodbye
