@@ -4,6 +4,6 @@ on:
 jobs:
   x:
     runs-on: ubuntu-latest
-    environment: ${{ github.event_name == "push" }}
+    environment: "${{ github.event_name == \"push\" }}"
     steps:
       - run: echo oh dear
