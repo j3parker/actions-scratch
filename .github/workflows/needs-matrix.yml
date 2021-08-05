@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         flavour: [x, y]
-    name: "a-${{matrix.flavour}}"
+    name: "b-${{matrix.flavour}}"
     needs: a
     steps:
       - run: echo goodbye
