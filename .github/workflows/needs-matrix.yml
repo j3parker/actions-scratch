@@ -20,4 +20,4 @@ jobs:
     name: "b-${{matrix.flavour}}"
     needs: a
     steps:
-      - run: echo '${{ needs.one.outputs.foo_${{ matrix.flavour }} }}'
+      - run: echo ${{ toJson(needs) }}
