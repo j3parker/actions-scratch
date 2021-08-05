@@ -5,13 +5,18 @@ jobs:
     strategy:
       matrix:
         flavour: [x, y]
+    outputs:
+      foo_x: ${{ steps.doit.outputs.foo_x }}
+      foo_y: ${{ steps.doit.outputs.foo_y }}
     name: "a-${{matrix.flavour}}"
     steps:
-      - run: |
+      - id: doit
+        run: |
           echo calculating something...
           RESULT=$RANDOM
           echo got $RESULT
           echo "::set-output name=foo_${{ matrix.flavour }}::$RESULT"
+      
   b:
     runs-on: ubuntu-latest
     strategy:
