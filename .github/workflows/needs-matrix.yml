@@ -8,6 +8,8 @@ jobs:
     name: "a-${{matrix.flavour}}"
     steps:
       - run: echo hello
+    outputs:
+      flavour: ${{ matrix.flavour }} 
   b:
     runs-on: ubuntu-latest
     strategy:
@@ -16,4 +18,4 @@ jobs:
     name: "b-${{matrix.flavour}}"
     needs: a
     steps:
-      - run: echo goodbye
+      - run: echo ${{ toJSON(needs) }}
