@@ -1,0 +1,11 @@
+on: push
+jobs:
+  foo:
+    runs-on: ubuntu-slim
+    steps:
+      - run: dotnet tool exec foo
+  bar:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/setup-dotnet@v6
+      - run: dotnet tool exec foo
